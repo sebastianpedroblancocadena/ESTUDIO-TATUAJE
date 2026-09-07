@@ -6,10 +6,10 @@
   <title>Huascar Tattoo -- Arte en tu piel</title>
   <meta name="description" content="Huascar Tattoo - Estudio profesional de tatuajes y piercing en La Paz, Bolivia. Arte en tu piel desde 2019. Realismo, sombras, lettering y bioseguridad quirúrgica." />
 
-  <!-- Google Fonts: Kanit (Weights 300 to 900) -->
+  <!-- Google Fonts: Tattoo Blackletter (Pirata One), Dark Blackwork (Grenze Gotisch), Old English / Fraktur (UnifrakturCook), Chicano Script (Pinyon Script) & Modern Grotesque (Kanit) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Grenze+Gotisch:wght@600;700;800;900&family=Pirata+One&family=UnifrakturCook:wght@700&family=Pinyon+Script&family=Kanit:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400&display=swap" rel="stylesheet">
 
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -19,6 +19,10 @@
         extend: {
           fontFamily: {
             kanit: ["'Kanit'", "sans-serif"],
+            tattoo: ["'Pirata One'", "'Grenze Gotisch'", "serif"],
+            blackwork: ["'Grenze Gotisch'", "serif"],
+            fraktur: ["'UnifrakturCook'", "cursive"],
+            chicano: ["'Pinyon Script'", "cursive"],
           },
           colors: {
             darkBg: "#0C0C0C",
@@ -59,9 +63,24 @@
       width: 100%;
     }
 
-    /* CSS class .hero-heading from exact specification */
+    /* Tattoo Typography Classes */
+    .font-tattoo {
+      font-family: 'Pirata One', 'Grenze Gotisch', serif;
+      letter-spacing: 0.04em;
+    }
+    .font-blackwork {
+      font-family: 'Grenze Gotisch', serif;
+    }
+    .font-fraktur {
+      font-family: 'UnifrakturCook', cursive;
+    }
+    .font-chicano {
+      font-family: 'Pinyon Script', cursive;
+    }
+
+    /* CSS class .hero-heading with high-contrast steel chrome tattoo finish */
     .hero-heading {
-      background: linear-gradient(180deg, #646973 0%, #BBCCD7 100%);
+      background: linear-gradient(180deg, #FFFFFF 0%, #E2ECF2 25%, #93A4B0 65%, #4A5660 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
@@ -174,19 +193,22 @@
         </nav>
       </header>
 
-      <!-- Hero Heading: Stacked HUASCAR on top and TATTOO below for maximum legibility and scale.
+      <!-- Hero Heading: Stacked HUASCAR on top and TATTOO below with authentic Gothic / Blackletter Tattoo Lettering (Pirata One).
            Layered in front (z-20) with pointer-events-none so mouse movement passes directly through to the 3D sphere magnet -->
       <div class="w-full flex flex-col items-center justify-center text-center select-none relative z-20 pointer-events-none mt-2 sm:mt-0 md:-mt-6">
+        <span class="font-chicano text-[#D4AF37] text-2xl sm:text-3xl md:text-4xl tracking-wide select-none fade-in-init -mb-2 sm:-mb-3" style="transform: translateY(20px);">
+          Arte en tu piel
+        </span>
         <h1
           id="hero-title-1"
-          class="hero-heading font-black uppercase tracking-tight leading-none whitespace-nowrap text-[15vw] sm:text-[16vw] md:text-[16.5vw] lg:text-[17vw] fade-in-init"
+          class="font-tattoo hero-heading font-black uppercase tracking-wider leading-none whitespace-nowrap text-[16vw] sm:text-[17vw] md:text-[17.5vw] lg:text-[18vw] fade-in-init"
           style="transform: translateY(30px);"
         >
           HUASCAR
         </h1>
         <h2
           id="hero-title-2"
-          class="hero-heading font-black uppercase tracking-tight leading-none whitespace-nowrap text-[13.5vw] sm:text-[14.5vw] md:text-[15vw] lg:text-[15.5vw] -mt-3 sm:-mt-6 md:-mt-10 lg:-mt-12 fade-in-init"
+          class="font-tattoo hero-heading font-black uppercase tracking-wider leading-none whitespace-nowrap text-[14vw] sm:text-[15vw] md:text-[15.5vw] lg:text-[16vw] -mt-2 sm:-mt-5 md:-mt-8 lg:-mt-10 fade-in-init"
           style="transform: translateY(40px);"
         >
           TATTOO
@@ -220,15 +242,16 @@
 
       <!-- Bottom Bar: Flexbox justify-between items-end with pb-7 sm:pb-8 md:pb-10 -->
       <div class="w-full px-6 md:px-10 pb-7 sm:pb-8 md:pb-10 flex justify-between items-end z-20">
-        <!-- Left: Paragraph text -->
-        <p
-          id="hero-bottom-text"
-          style="font-size: clamp(0.75rem, 1.4vw, 1.5rem);"
-          class="text-[#D7E2EA] font-light uppercase tracking-wide leading-snug max-w-[160px] sm:max-w-[220px] md:max-w-[280px] fade-in-init"
-          style="transform: translateY(20px);"
-        >
-          Arte en tu piel · Tatuajes y piercing con bioseguridad quirúrgica
-        </p>
+        <!-- Left: Paragraph text with Chicano flourish accent -->
+        <div id="hero-bottom-text" class="fade-in-init max-w-[180px] sm:max-w-[240px] md:max-w-[300px]" style="transform: translateY(20px);">
+          <span class="font-chicano text-[#D4AF37] text-xl sm:text-2xl md:text-3xl block -mb-1">Tatuajes & Piercing</span>
+          <p
+            style="font-size: clamp(0.75rem, 1.3vw, 1.35rem);"
+            class="text-[#D7E2EA] font-light uppercase tracking-wide leading-snug"
+          >
+            Bioseguridad quirúrgica · Desde 2019 en La Paz
+          </p>
+        </div>
 
         <!-- Right: ContactButton component -->
         <div id="hero-cta-wrapper" class="fade-in-init" style="transform: translateY(20px);">
@@ -313,15 +336,21 @@
 
       <!-- Center Container -->
       <div class="max-w-4xl w-full flex flex-col items-center text-center z-20">
-        <!-- Heading -->
-        <div class="fade-in-init" style="transform: translateY(40px);">
-          <h2 style="font-size: clamp(3rem, 12vw, 160px);" class="hero-heading font-black uppercase leading-none tracking-tight text-center">
+        <!-- Heading with Tattoo Gothic & Chicano script -->
+        <div class="fade-in-init flex flex-col items-center" style="transform: translateY(40px);">
+          <span class="font-chicano text-[#D4AF37] text-2xl sm:text-3xl md:text-4xl block -mb-1 select-none">
+            Trayectoria & Filosofía
+          </span>
+          <h2 style="font-size: clamp(3.2rem, 13vw, 170px);" class="font-tattoo hero-heading font-black uppercase leading-none tracking-wider text-center">
             SOBRE MÍ
           </h2>
+          <span class="font-chicano text-neutral-400 text-xl sm:text-2xl md:text-3xl block mt-1 select-none">
+            Huascar Blanco · Desde 2019
+          </span>
         </div>
 
-        <!-- Gap: gap-10 sm:gap-14 md:gap-16 -->
-        <div class="h-10 sm:h-14 md:h-16"></div>
+        <!-- Gap: gap-8 sm:gap-12 md:gap-14 -->
+        <div class="h-8 sm:h-12 md:h-14"></div>
 
         <!-- Animated Paragraph: Character-by-character scroll opacity animation -->
         <div class="max-w-[560px] w-full px-4">
@@ -358,11 +387,17 @@
          ========================================== -->
     <section id="services" class="bg-[#FFFFFF] text-[#0C0C0C] rounded-t-[40px] sm:rounded-t-[50px] md:rounded-t-[60px] px-5 sm:px-8 md:px-10 py-20 sm:py-24 md:py-32 relative z-10 select-none shadow-2xl">
       <div class="max-w-5xl mx-auto">
-        <!-- Section Heading -->
-        <div class="fade-in-init text-center mb-16 sm:mb-20 md:mb-28" style="transform: translateY(30px);">
-          <h2 style="font-size: clamp(3rem, 12vw, 160px);" class="text-[#0C0C0C] font-black uppercase tracking-tight leading-none text-center">
+        <!-- Section Heading with Tattoo Typography -->
+        <div class="fade-in-init text-center mb-16 sm:mb-20 md:mb-24 flex flex-col items-center" style="transform: translateY(30px);">
+          <span class="font-chicano text-[#8A641A] text-2xl sm:text-3xl md:text-4xl block -mb-1 select-none">
+            Especialidades de Estudio
+          </span>
+          <h2 style="font-size: clamp(3.2rem, 13vw, 170px);" class="font-tattoo text-[#0C0C0C] font-black uppercase tracking-wider leading-none text-center">
             SERVICIOS
           </h2>
+          <span class="text-xs uppercase tracking-widest text-neutral-500 font-medium mt-1">
+            Técnicas de autor · Calidad asegurada
+          </span>
         </div>
 
         <!-- 5 Service Items -->
@@ -370,7 +405,7 @@
           
           <!-- Item 01 -->
           <div class="service-item fade-in-init flex flex-col md:flex-row md:items-center justify-between py-8 sm:py-10 md:py-12 transition-colors duration-300 group hover:bg-neutral-50 px-2 sm:px-4 rounded-xl" style="transform: translateY(30px);">
-            <div style="font-size: clamp(3rem, 10vw, 140px);" class="font-black text-[#0C0C0C] tracking-tighter leading-none md:w-1/3 flex-shrink-0 group-hover:text-[#D4AF37] transition-colors duration-300">
+            <div style="font-size: clamp(3.5rem, 11vw, 150px);" class="font-tattoo font-black text-[#0C0C0C] tracking-tight leading-none md:w-1/3 flex-shrink-0 group-hover:text-[#D4AF37] transition-colors duration-300">
               01
             </div>
             <div class="md:w-2/3 flex flex-col gap-2 mt-4 md:mt-0">
@@ -390,16 +425,16 @@
 
           <!-- Item 02 -->
           <div class="service-item fade-in-init flex flex-col md:flex-row md:items-center justify-between py-8 sm:py-10 md:py-12 border-t border-[#0C0C0C]/15 transition-colors duration-300 group hover:bg-neutral-50 px-2 sm:px-4 rounded-xl" style="transform: translateY(30px);">
-            <div style="font-size: clamp(3rem, 10vw, 140px);" class="font-black text-[#0C0C0C] tracking-tighter leading-none md:w-1/3 flex-shrink-0 group-hover:text-[#D4AF37] transition-colors duration-300">
+            <div style="font-size: clamp(3.5rem, 11vw, 150px);" class="font-tattoo font-black text-[#0C0C0C] tracking-tight leading-none md:w-1/3 flex-shrink-0 group-hover:text-[#D4AF37] transition-colors duration-300">
               02
             </div>
             <div class="md:w-2/3 flex flex-col gap-2 mt-4 md:mt-0">
               <div class="flex items-center gap-3">
                 <h3 style="font-size: clamp(1rem, 2.2vw, 2.1rem);" class="font-medium uppercase text-[#0C0C0C] tracking-wide">
-                  Caligrafía & Lettering Fino
+                  Caligrafía, Chicano & Lettering Fino
                 </h3>
                 <span class="hidden sm:inline-block text-[11px] font-semibold uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-black text-[#F5E7A3]">
-                  Fine-Line
+                  Gothic & Script
                 </span>
               </div>
               <p style="font-size: clamp(0.85rem, 1.6vw, 1.25rem);" class="font-light leading-relaxed max-w-2xl text-[#0C0C0C] opacity-60">
@@ -410,7 +445,7 @@
 
           <!-- Item 03 -->
           <div class="service-item fade-in-init flex flex-col md:flex-row md:items-center justify-between py-8 sm:py-10 md:py-12 border-t border-[#0C0C0C]/15 transition-colors duration-300 group hover:bg-neutral-50 px-2 sm:px-4 rounded-xl" style="transform: translateY(30px);">
-            <div style="font-size: clamp(3rem, 10vw, 140px);" class="font-black text-[#0C0C0C] tracking-tighter leading-none md:w-1/3 flex-shrink-0 group-hover:text-[#D4AF37] transition-colors duration-300">
+            <div style="font-size: clamp(3.5rem, 11vw, 150px);" class="font-tattoo font-black text-[#0C0C0C] tracking-tight leading-none md:w-1/3 flex-shrink-0 group-hover:text-[#D4AF37] transition-colors duration-300">
               03
             </div>
             <div class="md:w-2/3 flex flex-col gap-2 mt-4 md:mt-0">
@@ -430,7 +465,7 @@
 
           <!-- Item 04 -->
           <div class="service-item fade-in-init flex flex-col md:flex-row md:items-center justify-between py-8 sm:py-10 md:py-12 border-t border-[#0C0C0C]/15 transition-colors duration-300 group hover:bg-neutral-50 px-2 sm:px-4 rounded-xl" style="transform: translateY(30px);">
-            <div style="font-size: clamp(3rem, 10vw, 140px);" class="font-black text-[#0C0C0C] tracking-tighter leading-none md:w-1/3 flex-shrink-0 group-hover:text-[#D4AF37] transition-colors duration-300">
+            <div style="font-size: clamp(3.5rem, 11vw, 150px);" class="font-tattoo font-black text-[#0C0C0C] tracking-tight leading-none md:w-1/3 flex-shrink-0 group-hover:text-[#D4AF37] transition-colors duration-300">
               04
             </div>
             <div class="md:w-2/3 flex flex-col gap-2 mt-4 md:mt-0">
@@ -450,7 +485,7 @@
 
           <!-- Item 05 -->
           <div class="service-item fade-in-init flex flex-col md:flex-row md:items-center justify-between py-8 sm:py-10 md:py-12 border-t border-[#0C0C0C]/15 transition-colors duration-300 group hover:bg-neutral-50 px-2 sm:px-4 rounded-xl" style="transform: translateY(30px);">
-            <div style="font-size: clamp(3rem, 10vw, 140px);" class="font-black text-[#0C0C0C] tracking-tighter leading-none md:w-1/3 flex-shrink-0 group-hover:text-[#D4AF37] transition-colors duration-300">
+            <div style="font-size: clamp(3.5rem, 11vw, 150px);" class="font-tattoo font-black text-[#0C0C0C] tracking-tight leading-none md:w-1/3 flex-shrink-0 group-hover:text-[#D4AF37] transition-colors duration-300">
               05
             </div>
             <div class="md:w-2/3 flex flex-col gap-2 mt-4 md:mt-0">
